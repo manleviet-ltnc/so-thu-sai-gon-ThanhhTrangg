@@ -97,5 +97,14 @@
   <ItemGroup>
     <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-application-exit.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\210_img1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\210_img11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\61391.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

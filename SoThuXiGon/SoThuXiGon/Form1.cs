@@ -17,7 +17,7 @@ namespace SoThuXiGon
         {
             InitializeComponent();
         }
-        
+       
         private void ListBox_MouseDown(object sender, MouseEventArgs e)
         {
             ListBox lb = (ListBox)sender;
@@ -36,11 +36,30 @@ namespace SoThuXiGon
         }
 
         private void lstDanhSach_DragDrop(object sender, DragEventArgs e)
+          
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
             {
-                ListBox lb = (ListBox)sender;
-                lb.Items.Add(e.Data.GetData(DataFormats.Text));
+                bool test = false;
+                for (int i =0; i < lstDanhSach.Items.Count; i++)
+                {
+                    string st = lstDanhSach.Items[i].ToString();
+                    string dt = e.Data.GetData(DataFormats.Text).ToString();
+                    if (dt == st)
+                        test = true;
+                }
+                if (test = false)
+                {
+                    int newindex = lstDanhSach.IndexFromPoint(lstDanhSach.PointToClient(new Point(e.X, e.Y)));
+                    lstDanhSach.Items.Remove(e.Data.GetData(DataFormats.Text));
+                    if (newindex != -1)
+                        lstDanhSach.Items.Insert(newindex, e.Data.GetData(DataFormats.Text));
+                    else
+                    {
+                        ListBox lb = (ListBox)sender;
+                        lb.Items.Add(e.Data.GetData(DataFormats.Text));
+                    }
+                }
 
             }
       
@@ -90,6 +109,11 @@ namespace SoThuXiGon
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            lstDanhSach.Items.Remove(lstDanhSach.SelectedItem);
         }
     }
 }
