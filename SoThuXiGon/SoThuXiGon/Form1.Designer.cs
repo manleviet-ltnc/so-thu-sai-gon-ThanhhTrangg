@@ -84,7 +84,6 @@
             this.lstThuMoi.Size = new System.Drawing.Size(203, 188);
             this.lstThuMoi.TabIndex = 2;
             this.toolTip1.SetToolTip(this.lstThuMoi, "Ấn chuột và kéo sang Danh sách thú để tạo sở thú");
-            this.lstThuMoi.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstDanhSach_DragDrop);
             this.lstThuMoi.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_DragEnter);
             this.lstThuMoi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListBox_MouseDown);
             // 
@@ -276,6 +275,7 @@
             this.MinimumSize = new System.Drawing.Size(321, 233);
             this.Name = "Form1";
             this.Text = "So Thu Xi Gon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

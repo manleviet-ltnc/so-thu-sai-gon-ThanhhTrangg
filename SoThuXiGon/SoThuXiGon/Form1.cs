@@ -17,13 +17,14 @@ namespace SoThuXiGon
         {
             InitializeComponent();
         }
-       
+        bool isSave = false;
+
         private void ListBox_MouseDown(object sender, MouseEventArgs e)
         {
             ListBox lb = (ListBox)sender;
             int index = lb.IndexFromPoint(e.X, e.Y);
             if (index != -1)
-                 lb.DoDragDrop(lb.Items[index].ToString(), DragDropEffects.Copy);
+                lb.DoDragDrop(lb.Items[index].ToString(), DragDropEffects.Copy);
         }
         private void ListBox_DragEnter(object sender, DragEventArgs e)
         {
@@ -36,19 +37,19 @@ namespace SoThuXiGon
         }
 
         private void lstDanhSach_DragDrop(object sender, DragEventArgs e)
-          
+
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
             {
                 bool test = false;
-                for (int i =0; i < lstDanhSach.Items.Count; i++)
+                for (int i = 0; i < lstDanhSach.Items.Count; i++)
                 {
                     string st = lstDanhSach.Items[i].ToString();
                     string dt = e.Data.GetData(DataFormats.Text).ToString();
                     if (dt == st)
                         test = true;
                 }
-                if (test = false)
+                if (test == false)
                 {
                     int newindex = lstDanhSach.IndexFromPoint(lstDanhSach.PointToClient(new Point(e.X, e.Y)));
                     lstDanhSach.Items.Remove(e.Data.GetData(DataFormats.Text));
@@ -62,8 +63,9 @@ namespace SoThuXiGon
                 }
 
             }
-      
+
         }
+
         private void Save(object sender, EventArgs e)
         {
             StreamWriter write = new StreamWriter("danhsachthu.txt");
@@ -71,11 +73,12 @@ namespace SoThuXiGon
             foreach (var item in lstDanhSach.Items)
                 write.WriteLine(item.ToString());
             write.Close();
+            isSave = true;
         }
 
-        
 
-        
+
+
         private void mnuClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -87,7 +90,7 @@ namespace SoThuXiGon
 
             if (reader == null) return;
 
-            string input= null;
+            string input = null;
             while ((input = reader.ReadLine()) != null)
                 lstThuMoi.Items.Add(input);
             reader.Close();
@@ -102,7 +105,7 @@ namespace SoThuXiGon
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = string.Format("Bây giờ là {0}:{1}:{2} ngày {3} tháng {4} năm {5}",
-                DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Day, 
+                DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Day,
                 DateTime.Now.Month, DateTime.Now.Year);
         }
 
@@ -114,6 +117,28 @@ namespace SoThuXiGon
         private void btnXoa_Click(object sender, EventArgs e)
         {
             lstDanhSach.Items.Remove(lstDanhSach.SelectedItem);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isSave == false)
+            {
+                DialogResult Kq = MessageBox.Show(" Ban co muon luu danh sach?", "Thong bao", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (Kq == DialogResult.Yes)
+                {
+                    Save(sender, e);
+                    e.Cancel = false;
+                }
+                else if (Kq == DialogResult.No)
+                    e.Cancel = false;
+                else
+                    e.Cancel = false;
+
+
+            }
+            else
+                mnuClose_Click(sender, e);
+            
         }
     }
 }
