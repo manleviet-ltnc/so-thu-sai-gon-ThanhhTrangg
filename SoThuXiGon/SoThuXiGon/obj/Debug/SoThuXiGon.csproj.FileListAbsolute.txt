@@ -8,6 +8,7 @@ C:\Users\thuchanh\Documents\GitHub\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuX
 C:\Users\thuchanh\Documents\GitHub\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\Debug\SoThuXiGon.csproj.CoreCompileInputs.cache
 C:\Users\thuchanh\Documents\GitHub\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\Debug\SoThuXiGon.exe
 C:\Users\thuchanh\Documents\GitHub\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\Debug\SoThuXiGon.pdb
+<<<<<<< HEAD
 C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\bin\Debug\SoThuXiGon.exe.config
 C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\bin\Debug\SoThuXiGon.exe
 C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\bin\Debug\SoThuXiGon.pdb
@@ -18,3 +19,5 @@ C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\D
 C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\Debug\SoThuXiGon.csproj.CoreCompileInputs.cache
 C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\Debug\SoThuXiGon.exe
 C:\Users\Au Zu\Documents\so-thu-sai-gon-ThanhhTrangg\SoThuXiGon\SoThuXiGon\obj\Debug\SoThuXiGon.pdb
+=======
+>>>>>>> 67603d15d2a3a0cd5b4c49ac7ae8d28eb5325680
